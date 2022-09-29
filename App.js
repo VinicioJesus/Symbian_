@@ -5,33 +5,33 @@ import Login from "./src/telas/Login";
 import Cadastro from "./src/telas/Cadastro";
 import Listagem from "./src/telas/Listagem";
 
-const App = ()=>{
+const App = () => {
 
   //const nome = 'SENAI - JANDIRA';
-  return(
+  return (
 
     // <View>
     //   <Text style={estilo.titulo}>{nome}</Text>
     // </View>  
     //<Login />
-    <Listagem/>
-    //<CadasListro/>
+
+    <Cadastro />
 
   );
 
 }
 
 const estilo = StyleSheet.create({
-  container:{},
-  titulo:{
-    width:"100%",
-    backgroundColor:"#F00",
-    textAlign:"center",
-    fontSize:16,
-    lineHeight:26,
-    color:"#FFF",
-    fontWeight:"bold",
-    padding:16,
+  container: {},
+  titulo: {
+    width: "100%",
+    backgroundColor: "#F00",
+    textAlign: "center",
+    fontSize: 16,
+    lineHeight: 26,
+    color: "#FFF",
+    fontWeight: "bold",
+    padding: 16,
   },
 });
 
