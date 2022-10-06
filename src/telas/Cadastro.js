@@ -20,11 +20,11 @@ const Cadastro = () => {
   //OS DADOS DIGITADOS
   const [inputs, setInputs] = React.useState({
     nome: '',
-    telefone: '',
-    celular: '',
     email: '',
+    celular: '',
+    telefone: '',
     nomeResponsavel: '',
-    capa: ''
+    telefoneResponsavel : ''
   });
 
   //FUNÇÃO QUE MANIPULA A ENTRADA DE DADOS NA
@@ -104,18 +104,18 @@ const Cadastro = () => {
 
   }
 
-  const cadastrar = () => {
+  // const cadastrar = () => {
 
-    try {
-      const response = apiLivraria.post('/cadastrarLivros',
-        {
-          titulo: inputs.titulo,
-          descricao: inputs.descricao,
-          imagem: inputs.capa,
-        });
-    } catch (error) { }
+  //   try {
+  //     const response = apiLivraria.post('/cadastrarLivros',
+  //       {
+  //         titulo: inputs.titulo,
+  //         descricao: inputs.descricao,
+  //         imagem: inputs.capa,
+  //       });
+  //   } catch (error) { }
 
-  }
+  // }
 
   //const nome = 'TELA DE CADASTRO';
   return (
@@ -124,31 +124,47 @@ const Cadastro = () => {
       <ScrollView style={estilos.scroll}>
 
         <Text style={estilos.textTitle}>
-          CADASTRO DE LIVRO
+          Cadastro de Paciente
         </Text>
 
         <View style={estilos.viewForm}>
 
           <Input
             placeholder="Nome"
-            iconName="book-outline"
-            error={errors.titulo}
-            onFocus={() => { handlerErrors(null, 'titulo') }}
-            onChangeText={(text) => handlerOnChange(text, 'titulo')} />
+            error={errors.nome}
+            onFocus={() => { handlerErrors(null, 'nome') }}
+            onChangeText={(text) => handlerOnChange(text, 'nome')} />
 
           <Input
-            label="DESCRIÇÃO"
-            iconName="card-text-outline"
-            error={errors.descricao}
-            onFocus={() => { handlerErrors(null, 'descricao') }}
-            onChangeText={(text) => handlerOnChange(text, 'descricao')} />
+            placeholder="E-mail"
+            error={errors.email}
+            onFocus={() => { handlerErrors(null, 'email') }}
+            onChangeText={(text) => handlerOnChange(text, 'email')} />
+            
+          <Input
+            placeholder="Celular"
+            error={errors.celular}
+            onFocus={() => { handlerErrors(null, 'celular') }}
+            onChangeText={(text) => handlerOnChange(text, 'celular')} />
 
           <Input
-            label="CAPA"
-            iconName="image-outline"
-            error={errors.capa}
-            onFocus={() => { handlerErrors(null, 'capa') }}
-            onChangeText={(text) => handlerOnChange(text, 'capa')} />
+            placeholder="Telefone"
+            error={errors.telefone}
+            onFocus={() => { handlerErrors(null, 'telefone') }}
+            onChangeText={(text) => handlerOnChange(text, 'telefone')} />         
+          
+          <Input
+            placeholder="Nome do Responsavel"            
+            error={errors.nomeResponsavel}
+            onFocus={() => { handlerErrors(null, 'nomeResponsavel') }}
+            onChangeText={(text) => handlerOnChange(text, 'nomeResponsavel')} />
+          
+          <Input
+            placeholder="Telefone do Responsavel"
+            error={errors.telefoneResponsavel}
+            onFocus={() => { handlerErrors(null, 'telefoneResponsavel') }}
+            onChangeText={(text) => handlerOnChange(text, 'telefoneResponsavel')} />
+            
 
           <Button
             title="CADASTRAR"
@@ -176,7 +192,7 @@ const estilos = StyleSheet.create({
     fontWeight: "bold",
   },
   viewForm: {
-    marginVertical: 20,
+    marginVertical: 1,
   },
 
 });

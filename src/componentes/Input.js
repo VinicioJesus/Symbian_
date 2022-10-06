@@ -38,10 +38,10 @@ const Input = ({label, iconName, error, onFocus=()=>{}, ...props})=>{
 const estilos = StyleSheet.create({
 
     formContainer:{
-        marginBottom:20,
+        marginBottom:5,
     },
     inputLabel:{
-        marginVertical:5,
+        marginVertical:1,
         fontSize:15,
         color:COLORS.gray,
     },
@@ -51,7 +51,7 @@ const estilos = StyleSheet.create({
         flexDirection:"row",
         paddingHorizontal:15,
         borderWidth:0.5,
-        alignItems:"center",
+        alignItems:"center",    
     },
     textInput:{
         color:COLORS.darkBlue,
